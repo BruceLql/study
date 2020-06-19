@@ -13,36 +13,37 @@ package com.bruce.study.algorithm.sort
  *@Version 1.0
  */
 class SelectionSort {
-
-    fun selectionSort(arr: IntArray) : IntArray{
-        val n = arr.size
-        // 总共要经过 N-1轮比较
-        for (i in 0..n-2){
-            println("第$i 轮比较")
-            var minIndex = i
-            // 每轮需要比较的次数 N-i
-            for (j in i+1 until n){
-                println("从下标为$j 开始比较")
-                if(arr[minIndex]> arr[j]){
-                    minIndex = j
+    companion object {
+        fun selectionSort(arr: IntArray): IntArray {
+            val n = arr.size
+            // 总共要经过 N-1轮比较
+            for (i in 0..n - 2) {
+                println("第$i 轮比较")
+                var minIndex = i
+                // 每轮需要比较的次数 N-i
+                for (j in i + 1 until n) {
+                    println("从下标为$j 开始比较")
+                    if (arr[minIndex] > arr[j]) {
+                        minIndex = j
+                    }
+                }
+                if (minIndex != i) {
+                    val temp = arr[i]
+                    arr[i] = arr[minIndex]
+                    arr[minIndex] = temp
                 }
             }
-            if(minIndex!=i){
-                val temp = arr[i]
-                arr[i] = arr[minIndex]
-                arr[minIndex] = temp
-            }
+            return arr
         }
-
-        return arr
     }
+
 
 }
 
 fun main() {
-    val arr = intArrayOf(9, 2, 6, 3,8, 4,1,0,  5, 7)
+    val arr = intArrayOf(9, 2, 6, 3, 8, 4, 1, 0, 5, 7)
     arr.forEach { println(it) }
-    val bubbleSort = SelectionSort().selectionSort(arr)
+    val bubbleSort = SelectionSort.selectionSort(arr)
     println("-------------------------")
     bubbleSort.forEach { println(it) }
 }

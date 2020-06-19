@@ -35,8 +35,10 @@ public class SelectionSortJava {
     public static void main(String[] args) {
         int[] arr = {2, 1, 3, 7, 6, 5, 9, 0, 4, 8};
         int[] ints = selectionSort(arr);
+//         int[] ints = SelectionSort.Companion.selectionSort(arr);
         for (int ss : ints) {
             System.out.println(ss);
         }
+
     }
 }
