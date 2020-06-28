@@ -12,7 +12,10 @@ version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
-	mavenCentral()
+//	mavenCentral()
+	maven { url = uri("https://repo.spring.io/milestone") }
+	maven { url = uri("https://repo.spring.io/snapshot") }
+	maven { url = uri("http://maven.aliyun.com/nexus/content/groups/public/") }
 }
 
 dependencies {
@@ -21,6 +24,7 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("io.jsonwebtoken:jjwt:0.9.1")
+	implementation("org.apache.dubbo:dubbo:2.7.7")
 	runtimeOnly("mysql:mysql-connector-java")
 	testImplementation("org.junit.jupiter:junit-jupiter:5.4.2")
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
