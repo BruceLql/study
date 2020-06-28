@@ -1,4 +1,4 @@
-package com.bruce.study.javabase.spi;
+package com.bruce.study.javabase.javaspi;
 /*
  *@ClassName MainClass
  *@Description
